@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "chatGPT Expand",
+    "version": "1.0",
+    "description": "If a response from ChatGPT contains  code tag, the width of the response window will be extended.",
+    "content_scripts": [
+      {
+        "matches": ["https://chat.openai.com/chat/*"],
+        "js": ["scripts/content.js"]
+      }
+    ],
+    "permissions": [
+      "activeTab"
+    ]
+  }
+  
