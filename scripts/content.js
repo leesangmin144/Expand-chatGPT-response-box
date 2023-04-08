@@ -6,15 +6,19 @@ function modifyDivClass() {
     // target div tag's class is below.
     // text-base gap-4 md:gap-6 md:max-w-2xl lg:max-w-xl xl:max-w-3xl p-4 md:py-6 flex lg:px-0 m-auto
     for (let i = 0; i < divs.length; i++) {
-        const lgOldClassName = 'lg:max-w-xl';
-        const lgNewClassName = 'lg:max-w-7xl';
+        const classNamesToRemove = ['lg:max-w-xl', 'lg:max-w-2xl', 'lg:max-w-3xl', 'lg:max-w-4xl', 'lg:max-w-5xl', 'lg:max-w-6xl',
+        'xl:max-w-xl', 'xl:max-w-2xl', 'xl:max-w-3xl', 'xl:max-w-4xl', 'xl:max-w-5xl', 'xl:max-w-6xl'];
 
-        const xlOldClassName = 'xl:max-w-xl';
+        for (let i = 0; i < divs.length; i++) {
+          for (let className of classNamesToRemove) {
+            divs[i].classList.remove(className);
+          }
+        }
+
+        const lgNewClassName = 'lg:max-w-7xl';
         const xlNewClassName = 'xl:max-w-7xl';
 
-        divs[i].classList.remove(lgOldClassName);
         divs[i].classList.add(lgNewClassName);
-        divs[i].classList.remove(xlOldClassName);
         divs[i].classList.add(xlNewClassName);
 
         console.log(divs[i]);
@@ -28,14 +32,23 @@ function findDivsWithCodeAndClass() {
     for (let i = 0; i < divs.length; i++) {
         const codeTags = divs[i].getElementsByTagName('code');
         const hasClassTextBase = divs[i].classList.contains('text-base');
-        const hasClassLgMax = divs[i].classList.contains('lg:max-w-xl');
-        const hasClassXlMax = divs[i].classList.contains('xl:max-w-3xl');
+
+        const divClassesStr = divs[i].classList.value;  // 해당 요소가 가진 모든 클래스 이름을 문자열로 가져옴
+        const hasClassLgMax = divClassesStr.includes('lg:max-');
+        const hasClassXlMax = divClassesStr.includes('xl:max-');
+
+        if (divClassesStr.includes('lg:max-w-7xl')) {
+          hasClassLgMax = false;
+        }
+        if (divClassesStr.includes("xl:max-w-7xl")) {
+          hasClassXlMax = false;
+        }
 
         if (codeTags.length > 0 
             && hasClassTextBase
             && hasClassLgMax
             && hasClassXlMax) {
-        targetDivs.push(divs[i]);
+          targetDivs.push(divs[i]);
         }
     }
 

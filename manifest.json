@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
-    "name": "Expand width of chatGPT <code> Box",
+    "name": "Expand chatGPT response box",
     "version": "1.0",
-    "description": "If a response box in ChatGPT(https://chat.openai.com/chat/*) contains <code> tag, the width of the response box will be expanded.",
+    "description": "Effortlessly expand the width of your ChatGPT response box with this simple, one-click installation browser extension!!",
     "content_scripts": [
       {
         "matches": ["https://chat.openai.com/chat/*"],
@@ -10,7 +10,7 @@
       }
     ],
     "permissions": [
-      "activeTab"
+      "activeTab"    
     ]
   }
   
