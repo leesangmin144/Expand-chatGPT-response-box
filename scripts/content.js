@@ -34,8 +34,8 @@ function findDivsWithCodeAndClass() {
         const hasClassTextBase = divs[i].classList.contains('text-base');
 
         const divClassesStr = divs[i].classList.value;  // 해당 요소가 가진 모든 클래스 이름을 문자열로 가져옴
-        const hasClassLgMax = divClassesStr.includes('lg:max-');
-        const hasClassXlMax = divClassesStr.includes('xl:max-');
+        let hasClassLgMax = divClassesStr.includes('lg:max-');
+        let hasClassXlMax = divClassesStr.includes('xl:max-');
 
         if (divClassesStr.includes('lg:max-w-7xl')) {
           hasClassLgMax = false;
