@@ -8,9 +8,6 @@
         "matches": ["https://chat.openai.com/chat/*"],
         "js": ["scripts/content.js"]
       }
-    ],
-    "permissions": [
-      "activeTab"    
     ]
   }
   
