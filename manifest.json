@@ -12,7 +12,7 @@
     "description": "Effortlessly expand the width of your ChatGPT response box with this simple, one-click installation browser extension!!",
     "content_scripts": [
       {
-        "matches": ["https://chat.openai.com/chat/*"],
+        "matches": ["https://chat.openai.com/*"],
         "js": ["scripts/content.js"]
       }
     ]

@@ -1,7 +1,7 @@
 
 function modifyDivClass() {
     var divs = findDivsWithCodeAndClass();
-
+    
     // Remove the classes starting with 'lg:max-w' and 'xl:max-w' from the target divs, 
     // and replace them with 'lg:max-w-7xl' and 'xl:max-w-7xl'.
     for (let i = 0; i < divs.length; i++) {
@@ -9,12 +9,12 @@ function modifyDivClass() {
 
       for (let j = 0; j < classList.length; j++) {
         if (classList.item(j).startsWith('lg:max-w')) {
-          divs[i].classList.remove(classList.item(j));
-          divs[i].classList.add('lg:max-w-7xl');
+          classList.remove(classList.item(j));
+          classList.add('lg:max-w-7xl');
         }
         if (classList.item(j).startsWith('xl:max-w')) {
-          divs[i].classList.remove(classList.item(j));
-          divs[i].classList.add('xl:max-w-7xl');
+          classList.remove(classList.item(j));
+          classList.add('xl:max-w-7xl');
         }
       }
     }
