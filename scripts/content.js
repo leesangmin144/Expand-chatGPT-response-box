@@ -47,9 +47,7 @@ function findDivsWithCodeAndClass() {
         hasClassXlMax = false;
       }
 
-      if (codeTags.length > 0 
-          && hasClassTextBase
-          && hasClassLgMax
+      if (hasClassLgMax
           && hasClassXlMax) {
         targetDivs.push(divs[i]);
       }
