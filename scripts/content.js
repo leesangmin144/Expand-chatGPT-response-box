@@ -22,7 +22,6 @@ function modifyDivClass() {
 
 /*
 Collect all divs from a webpage into targetDivs that meet the following conditions:
-  - child node has code tag with class: text-base
   - Among the classes of div, there are classes starting with 'lg:max-', 'xl:max-'
   - However, if lg:max-w-7xl and xl:max-w-7xl already exist, they are skipped without being included in targetDivs as no change is required
 */
@@ -31,8 +30,11 @@ function findDivsWithCodeAndClass() {
     const targetDivs = [];
 
     for (let i = 0; i < divs.length; i++) {
-      const codeTags = divs[i].getElementsByTagName('code');
-      const hasClassTextBase = divs[i].classList.contains('text-base');
+      /* 
+      The codeTags and hasClassTextBase are used to expand the width of the response box that includes a <code></code> element in its child tag.
+      */
+      // const codeTags = divs[i].getElementsByTagName('code');
+      // const hasClassTextBase = divs[i].classList.contains('text-base');
 
       // Get all class names of that element as a string
       const divClassesStr = divs[i].classList.value;  
@@ -47,8 +49,16 @@ function findDivsWithCodeAndClass() {
         hasClassXlMax = false;
       }
 
+      /*
+      The commented conditional statement is used to expand the width of the response box that includes a <code></code> element in its child tag.
+      */
+      // if (codeTags.length > 0
+      //   && hasClassTextBase
+      //   && hasClassLgMax 
+      //   && hasClassXlMax) {
       if (hasClassLgMax
           && hasClassXlMax) {
+
         targetDivs.push(divs[i]);
       }
     }
