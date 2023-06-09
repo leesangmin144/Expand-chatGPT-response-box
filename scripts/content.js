@@ -1,23 +1,10 @@
 
 function modifyDivClass() {
     var divs = findDivsWithCodeAndClass();
-    
-    // Remove the classes starting with 'lg:max-w' and 'xl:max-w' from the target divs, 
-    // and replace them with 'lg:max-w-7xl' and 'xl:max-w-7xl'.
-    for (let i = 0; i < divs.length; i++) {
-      const classList = divs[i].classList;
 
-      for (let j = 0; j < classList.length; j++) {
-        if (classList.item(j).startsWith('lg:max-w')) {
-          classList.remove(classList.item(j));
-          classList.add('lg:max-w-7xl');
-        }
-        if (classList.item(j).startsWith('xl:max-w')) {
-          classList.remove(classList.item(j));
-          classList.add('xl:max-w-7xl');
-        }
-      }
-    }
+    divs.forEach((div) => {
+      div.className = 'flex p-4 gap-4 text-base m-auto';
+    });
 }
 
 /*
@@ -39,23 +26,12 @@ function findDivsWithCodeAndClass() {
       // Get all class names of that element as a string
       const divClassesStr = divs[i].classList.value;  
 
-      let hasClassLgMax = divClassesStr.includes('lg:max-');
+      let hasClassLgMax = divClassesStr.includes('lg:px-');
       let hasClassXlMax = divClassesStr.includes('xl:max-');
-
-      if (divClassesStr.includes('lg:max-w-7xl')) {
-        hasClassLgMax = false;
-      }
-      if (divClassesStr.includes('xl:max-w-7xl')) {
-        hasClassXlMax = false;
-      }
 
       /*
       The commented conditional statement is used to expand the width of the response box that includes a <code></code> element in its child tag.
       */
-      // if (codeTags.length > 0
-      //   && hasClassTextBase
-      //   && hasClassLgMax 
-      //   && hasClassXlMax) {
       if (hasClassLgMax
           && hasClassXlMax) {
 
