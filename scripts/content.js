@@ -1,20 +1,6 @@
 
 function modifyDivClass() {
-    var divs = findDivsWithCodeAndClass();
-
-    divs.forEach((div) => {
-      div.className = 'flex p-4 gap-4 text-base m-auto';
-    });
-}
-
-/*
-Collect all divs from a webpage into targetDivs that meet the following conditions:
-  - Among the classes of div, there are classes starting with 'lg:max-', 'xl:max-'
-  - However, if lg:max-w-7xl and xl:max-w-7xl already exist, they are skipped without being included in targetDivs as no change is required
-*/
-function findDivsWithCodeAndClass() {
     const divs = document.getElementsByTagName('div');
-    const targetDivs = [];
 
     for (let i = 0; i < divs.length; i++) {
       /* 
@@ -35,11 +21,9 @@ function findDivsWithCodeAndClass() {
       if (hasClassLgMax
           && hasClassXlMax) {
 
-        targetDivs.push(divs[i]);
+          divs[i].className = 'flex p-4 gap-4 text-base m-auto';
       }
     }
-
-    return targetDivs;
 }
 
 // Run modifyDivClass() function whenever the page dynamically changes
