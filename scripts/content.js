@@ -12,16 +12,20 @@ function modifyDivClass() {
       // Get all class names of that element as a string
       const divClassesStr = divs[i].classList.value;  
 
-      let hasClassLgMax = divClassesStr.includes('lg:px-');
-      let hasClassXlMax = divClassesStr.includes('xl:max-');
+      let hasFlex = divClassesStr.includes('flex');
+      let hasP4 = divClassesStr.includes('p-4');
+      let hasGap4 = divClassesStr.includes('gap-4');
+      let hasMAuto = divClassesStr.includes('m-auto');
 
       /*
       The commented conditional statement is used to expand the width of the response box that includes a <code></code> element in its child tag.
       */
-      if (hasClassLgMax
-          && hasClassXlMax) {
+      if (hasFlex
+          && hasP4
+          && hasGap4
+          && hasMAuto) {
 
-          divs[i].className = 'flex p-4 gap-4 text-base m-auto';
+          divs[i].className = 'flex p-4 gap-4 text-base';
       }
     }
 }
