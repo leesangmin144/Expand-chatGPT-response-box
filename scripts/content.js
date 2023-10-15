@@ -13,9 +13,9 @@ function modifyDivClass() {
       const divClassesStr = divs[i].classList.value;  
 
       let hasFlex = divClassesStr.includes('flex');
-      let hasP4 = divClassesStr.includes('p-4');
+      let hasP4 = divClassesStr.includes('flex-1');
       let hasGap4 = divClassesStr.includes('gap-4');
-      let hasMAuto = divClassesStr.includes('m-auto');
+      let hasMAuto = divClassesStr.includes('mx-auto');
 
       /*
       The commented conditional statement is used to expand the width of the response box that includes a <code></code> element in its child tag.

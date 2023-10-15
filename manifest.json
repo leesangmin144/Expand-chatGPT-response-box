@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Expand chatGPT response box",
-    "version": "1.5",
+    "version": "1.6",
     "icons": {
       "48": "images/icons/icon48.png",
       "64": "images/icons/icon64.png",
