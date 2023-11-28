@@ -14,7 +14,7 @@ function modifyDivClass() {
 
       let hasFlex = divClassesStr.includes('flex');
       let hasP4 = divClassesStr.includes('flex-1');
-      let hasGap4 = divClassesStr.includes('gap-4');
+      let hasGap4 = divClassesStr.includes('gap-3');
       let hasMAuto = divClassesStr.includes('mx-auto');
 
       /*
